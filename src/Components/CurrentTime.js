@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./CurrentTime.css";
-import date from "../functions/getCurrentDate";
 
 function CurrentTime() {
   const [timeState, setTimeState] = useState(new Date());
@@ -10,7 +9,9 @@ function CurrentTime() {
   return (
     <section className='centered card1'>
       <p>Today's Date:</p>
-      <p>{date}</p>
+      <p>{new Date().toLocaleDateString('en-US', {
+        dateStyle: 'full'
+      })}</p>
       <div>
         <p>Current Time (24hr):</p>
         <p>
