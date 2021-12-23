@@ -1,6 +1,6 @@
 import "./App.css";
-import CurrentTime from "./Components/CurrentTime";
-import Header from "./Components/Header";
+import CurrentTime from "./components/CurrentTime";
+import Header from "./components/Header";
 
 function App() {
   return (

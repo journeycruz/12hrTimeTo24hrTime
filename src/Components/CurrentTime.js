@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./CurrentTime.css";
-import time from '../utils/getCurrentTime';
-import date from '../utils/getCurrentDate';
-import convertedTime from "../utils/24to12conversion";
+import date from "../functions/getCurrentDate";
 
 function CurrentTime() {
+  const [timeState, setTimeState] = useState(new Date());
+  useEffect(() => {
+    setInterval(() => setTimeState(new Date()), 1000);
+  }, []);
   return (
     <section className='centered card1'>
       <p>Today's Date:</p>
       <p>{date}</p>
       <div>
         <p>Current Time (24hr):</p>
-        <p>{time}</p>
+        <p>
+          {timeState.toLocaleString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            second: '2-digit',
+            hour12: false,
+          })}
+        </p>
       </div>
       <div>
         <p>Current Time (12hr):</p>
-        <p>{convertedTime}</p>
+        <p>{timeState.toLocaleString('en-US', {
+          hour: 'numeric',
+          minute: 'numeric',
+          second: '2-digit',
+          hour12: true,
+        })}</p>
       </div>
     </section>
   );
