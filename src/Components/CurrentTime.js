@@ -1,36 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./CurrentTime.css";
+import TwelveHourTime from "./TwelveHourTime";
+import TwentyFourHourTime from "./TwentyFourHourTime";
 
 function CurrentTime() {
-  const [timeState, setTimeState] = useState(new Date());
-  useEffect(() => {
-    setInterval(() => setTimeState(new Date()), 1000);
-  }, []);
+  const [toggle, setToggle] = useState(true);
+
+  const handleClick = () => {
+    toggle ? setToggle(false) : setToggle(true);
+  };
+
   return (
     <section className='centered card1'>
-      <p>Today's Date:</p>
-      <p>{new Date().toLocaleDateString('en-US', {
-        dateStyle: 'full'
-      })}</p>
       <div>
-        <p>Current Time (24hr):</p>
-        <p>
-          {timeState.toLocaleString("en-US", {
-            hour: "numeric",
-            minute: "numeric",
-            second: '2-digit',
-            hour12: false,
-          })}
+        <p id='big-time' onClick={handleClick}>
+          {toggle ? <TwelveHourTime /> : <TwentyFourHourTime />}
         </p>
-      </div>
-      <div>
-        <p>Current Time (12hr):</p>
-        <p>{timeState.toLocaleString('en-US', {
-          hour: 'numeric',
-          minute: 'numeric',
-          second: '2-digit',
-          hour12: true,
-        })}</p>
+        (click to toggle)
+        <p>
+        {new Date().toLocaleDateString("en-US", {
+          dateStyle: "full",
+        })}
+      </p>
       </div>
     </section>
   );

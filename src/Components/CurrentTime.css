@@ -1,5 +1,8 @@
-.card1 {
-    background: #FFF;
-    border-radius: 3px;
-    border: 1px solid gray;
+#big-time {
+    font-size: 4em;
+    color: gray;
+}
+
+p {
+    margin: 0;
 }
