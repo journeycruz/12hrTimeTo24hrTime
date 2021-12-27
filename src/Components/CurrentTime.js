@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CurrentTime.css";
+import "../styles/CurrentTime.css";
 import TwelveHourTime from "./TwelveHourTime";
 import TwentyFourHourTime from "./TwentyFourHourTime";
 
@@ -11,19 +11,20 @@ function CurrentTime() {
   };
 
   return (
-    <section className='centered card1'>
+    <main className='centered'>
       <div>
         <p id='big-time' onClick={handleClick}>
           {toggle ? <TwelveHourTime /> : <TwentyFourHourTime />}
         </p>
         (click to toggle)
         <p>
+        <br />
         {new Date().toLocaleDateString("en-US", {
           dateStyle: "full",
         })}
       </p>
       </div>
-    </section>
+    </main>
   );
 }
 

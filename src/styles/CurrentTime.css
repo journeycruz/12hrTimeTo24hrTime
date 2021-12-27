@@ -1,0 +1,16 @@
+#big-time {
+    font-size: 3.5em;
+    color: gray;
+}
+
+p {
+    margin: 0;
+}
+
+main {
+    width: 100vw;
+    height: 20vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}

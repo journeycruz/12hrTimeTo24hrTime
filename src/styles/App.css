@@ -1,0 +1,8 @@
+.bg {
+    background-color: ivory;
+}
+
+.centered {
+    display: grid;
+    text-align: center;
+}
