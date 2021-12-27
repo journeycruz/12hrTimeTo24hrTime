@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function TwentyFourHourTime() {
+export const TwentyFourHourTime = () => {
     const [time, setTime] = useState(new Date().toLocaleString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
@@ -21,5 +21,3 @@ function TwentyFourHourTime() {
         </div>
     )
 }
-
-export default TwentyFourHourTime

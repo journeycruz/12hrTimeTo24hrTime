@@ -3,7 +3,7 @@ import "../styles/CurrentTime.css";
 import TwelveHourTime from "./TwelveHourTime";
 import TwentyFourHourTime from "./TwentyFourHourTime";
 
-function CurrentTime() {
+export const CurrentTime = () => {
   const [toggle, setToggle] = useState(true);
 
   const handleClick = () => {
@@ -27,5 +27,3 @@ function CurrentTime() {
     </main>
   );
 }
-
-export default CurrentTime;
