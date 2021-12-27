@@ -1,6 +1,6 @@
 import React from 'react';
-import CurrentTime from "./components/CurrentTime";
-import Header from './components/Header';
+import CurrentTime from "./Components/CurrentTime";
+import Header from './Components/Header';
 import "./styles/App.css";
 
 function App() {
